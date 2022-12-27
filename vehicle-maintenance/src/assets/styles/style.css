@@ -48,3 +48,17 @@ footer{
     font-size: 12px;
   }
 }
+.error {
+  color: red;
+  font-weight: bold;
+  position: relative;
+  top: -6px;
+  left: 23px;
+  text-transform: capitalize;
+}
+.success-modal {
+  display: block;
+}
+.success-text {
+  color: green;
+}

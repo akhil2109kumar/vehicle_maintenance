@@ -2,11 +2,14 @@ import React from 'react'
 import {useState} from 'react'
 import axios from "axios";
 import {API_URL} from '../constants'
+import SuccessModal from './SuccessModal';
 
 export default function VisitorForm() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [error, setError] = useState('')
+    // const [success, setSuccess] = useState(false)
+    const [showModal, setShowModal] = useState(false);
 
     const handleNameChange = (e) => {
         setName(e.target.value);
@@ -46,7 +49,8 @@ export default function VisitorForm() {
             if (res.status === 200) {
                 setName('')
                 setEmail('')
-                alert("User registered successfully");
+                setError('')
+                setShowModal(true)
 
             } else Promise.reject();
             })
@@ -64,10 +68,16 @@ export default function VisitorForm() {
         
     };
 
+    const handleClick = () => {
+        setShowModal(false)
+    }
+
   return (
     <div className="row">
         <div className="col-md-12 col-lg-9">
-            { error && <div>{error}</div>}
+            { error && <div className='error'>{error}</div>}
+            {showModal && <SuccessModal onClick={handleClick} />}
+
             <form>
                 <div className="mb-3">
                     <input type="text" 
