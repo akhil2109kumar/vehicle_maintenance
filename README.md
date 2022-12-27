@@ -9,8 +9,10 @@
 - The project setup is done using docker, so docker should be install on the machine.
 
 ### Steps
-- clone the repo
+- clone the repo ``https://github.com/akhil2109kumar/vehicle_maintenance.git
 - go to the root directory, in which docker-compose.yml is present
+- create .env file in `backend` directory and copy paste content from example_env to run locally
+- create .env file in `vehicle-maintenance` directory and copy paste content from example_env to run locally
 - now run `docker-compose up` from terminal
 
 
