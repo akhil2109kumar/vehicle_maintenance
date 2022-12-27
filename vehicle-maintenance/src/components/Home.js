@@ -8,7 +8,7 @@ import SecondPage from './secondPage';
 export default function Home() {
   return (
     <div className="main">
-        <div className="section-top py-5 my-md-5">
+        <div className="section-top">
             <div className="container">
                 <div className="row text-center text-lg-start">
                 <div className="col-12 col-lg-5">

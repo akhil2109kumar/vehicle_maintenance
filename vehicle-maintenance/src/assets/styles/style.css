@@ -22,6 +22,9 @@ header .btn-outline-secondary,.section-second .btn-outline-secondary{
 .section-top .btn-outline-secondary:hover{
 background-color: #7e0fe1;
 }
+.section-top img.left-img{
+  height: 74vh;
+}
 .section-top .icon-updown{
 width: 38px;
 height: 38px;

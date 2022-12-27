@@ -8,7 +8,6 @@ export default function VisitorForm() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [error, setError] = useState('')
-    // const [success, setSuccess] = useState(false)
     const [showModal, setShowModal] = useState(false);
 
     const handleNameChange = (e) => {

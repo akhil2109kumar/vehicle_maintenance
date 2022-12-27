@@ -15,8 +15,7 @@ app.use(cors({
 app.post("/create-user", (req, res, next) => {
   userSchema.create(req.body, (error, data) => {
     if (error) {
-      console.log(error, '==============')
-      // return next(error);
+      console.log(error)
     } else {
       console.log(data);
       res.json(data);
