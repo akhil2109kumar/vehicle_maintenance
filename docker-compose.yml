@@ -1,0 +1,39 @@
+version: "3.3"
+
+services:
+  mymongodb:
+    image: "mongo"
+
+    # the port that we want to publish for mongodb
+    ports:
+      - "27017:27017"
+
+    # our mongodb depends on volume to keep the data alive.
+    volumes:
+      - data:/data/db
+
+  frontend:
+    build: ./vehicle-maintenance
+
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./vehicle-maintenance/src:/app/src
+    stdin_open: true
+    tty: true
+
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+
+    volumes:
+      - ./backend/src:/app/src
+    depends_on:
+      - mymongodb
+
+volumes:
+  data:
